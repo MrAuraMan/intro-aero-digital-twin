@@ -143,24 +143,32 @@ Define all three cases before implementation. Include exact inputs, expected out
 
 Use your Section 8 reference calculation.
 
-```text
-[COMPLETE]
+```Inputs:
+   Cm0 = 0.04
+   Cm_alpha = -0.8 1/rad
+   alpha_rad = 0.0499164166 rad
+   delta_alpha = +2.00 deg
+
+   Outputs:
+   Cm(alpha) = 0.0000668667
+   delta_alpha_rad = 0.0349065850 rad
+   delta_Cm = -0.027925268
+
+   not trimmed because Cm(alpha) is greater than 1e-6 and has a restoring tendency because (delta_Cm)*(delta_alpha_rad) is negative
 ```
 
 ### 9.2 Behavioral case
 
 Change one input and state the exact trend or sign that must result.
 
-```text
-[COMPLETE]
+```If we change delta_alpha, say from +2 deg to -2 deg, will make delta_Cm positive resulting in a destablilizing tendency.
 ```
 
 ### 9.3 Boundary or sanity case
 
 Use an informative boundary such as zero slope, zero disturbance, or the trim condition. State the exact behavior expected and why division by zero or a false physical claim must not occur.
 
-```text
-[COMPLETE]
+```Division by zero results in a error in mathematics (undefined) so it should not occur, such as 0 Cm_alpha. 
 ```
 
 ## 10. Feature Requirements
@@ -195,8 +203,7 @@ Do not modify any existing file.
 
 In one or two sentences, state what decision the completed feature will support and what it cannot establish.
 
-```text
-[COMPLETE]
+```The feature will help us configure aircraft that will fit what we need for our mission. It cannot establish adequate dynamic damping, maneuver control, or safe handling qualities near the stall limit.
 ```
 
 ---

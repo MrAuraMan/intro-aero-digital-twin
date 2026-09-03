@@ -47,8 +47,9 @@ export function calculateTrimAngleDeg(cm0, cmAlphaPerRad) {
 export function calculateDeltaCm(cmAlphaPerRad, disturbanceAlphaDeg) {
   assertFiniteNumber(cmAlphaPerRad, "cmAlphaPerRad");
   const deltaAlphaRad = degreesToRadians(disturbanceAlphaDeg);
+  const deltaCm = cmAlphaPerRad * deltaAlphaRad;
 
-  return cmAlphaPerRad * deltaAlphaRad;
+  return deltaCm === 0 ? 0 : deltaCm;
 }
 
 export function classifyDisturbance(disturbanceAlphaDeg, deltaCm) {

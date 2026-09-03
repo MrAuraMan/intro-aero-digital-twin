@@ -69,7 +69,7 @@ describe("trim-response physics", () => {
 
   test("zero disturbance produces neutral tendency", () => {
     expect(
-      calculateDeltaCm(-0.8, 0)
+      calculateDeltaCm(-0.8, -0)
     ).toBe(0);
 
     expect(
